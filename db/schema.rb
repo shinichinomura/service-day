@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20171126152619) do
     t.string "title", limit: 64, null: false
     t.string "url", limit: 256
     t.string "summary", limit: 512, null: false
-    t.string "description", limit: 4096, null: false
+    t.text "description", null: false
     t.string "image_url", limit: 256
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -5,7 +5,7 @@ class CreatePromotions < ActiveRecord::Migration[5.1]
       t.string :title, null: false, limit: 64
       t.string :url, limit: 256
       t.string :summary, null: false, limit: 512
-      t.string :description, null: false, limit: 4096
+      t.text :description, null: false
       t.string :image_url, limit: 256
 
       t.timestamps
