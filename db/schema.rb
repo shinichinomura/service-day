@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171126143301) do
+ActiveRecord::Schema.define(version: 20171126151017) do
+
+  create_table "day_of_month_promotion_rules", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "promotion_id", null: false
+    t.integer "day", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["promotion_id", "day"], name: "index_day_of_month_promotion_rules_on_promotion_id_and_day", unique: true
+  end
 
   create_table "promotions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "shop_id", null: false
@@ -32,5 +40,6 @@ ActiveRecord::Schema.define(version: 20171126143301) do
     t.index ["name"], name: "index_shops_on_name", unique: true
   end
 
+  add_foreign_key "day_of_month_promotion_rules", "promotions", on_update: :cascade, on_delete: :cascade
   add_foreign_key "promotions", "shops", on_update: :cascade, on_delete: :cascade
 end
