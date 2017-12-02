@@ -1,3 +1,6 @@
+= content_for :head do
+  link rel="amphtml" href="#{promotion_path(@promotion, amp: 1)}"
+
 #promotions-show
   h1
     = @promotion.title

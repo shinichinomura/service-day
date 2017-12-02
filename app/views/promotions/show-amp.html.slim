@@ -1,0 +1,57 @@
+= content_for :head do
+  script type="application/ld+json"
+    | {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "#{@promotion.title}（#{@promotion.shop.name}）",
+        "description": "#{@promotion.summary}",
+        "datePublished": "#{@promotion.created_at.strftime('%Y-%m-%dT%H:%M:%S+09:00')}",
+        "dateModified": "#{@promotion.updated_at.strftime('%Y-%m-%dT%H:%M:%S+09:00')}",
+        "author": {
+          "@type": "Person",
+          "name": "野村真一",
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "サービスデイ",
+          "url": "http://service-day.com",
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "#{@promotion.image_url}",
+          "width": #{@promotion.image_size.width},
+          "height": #{@promotion.image_size.height},
+        }
+      }
+  link rel="canonical" href="#{promotion_path(@promotion)}"
+
+#promotions-show
+  h1
+    = @promotion.title
+
+  .image
+    amp-img src="#{@promotion.image_url}" width="#{@promotion.image_size.width}" height="#{@promotion.image_size.height}" layout="responsive"
+
+  h2
+    | ショップ名
+
+  .shop
+    = @promotion.shop.name
+    = link_to('（公式サイト）', @promotion.shop.url)
+
+  h2
+    | 詳細
+
+  .description
+    = @promotion.description
+
+  - if @promotion.url.present?
+    h2
+      | 公式ページ
+    .url
+      = link_to @promotion.url, @promotion.url, target: :_blank
+  h2
+    = "近くの#{@promotion.shop.name}を探す"
+  .map
+    = link_to("GoogleMapで#{@promotion.shop.name}を検索", "https://www.google.co.jp/maps/search/#{ERB::Util.url_encode(@promotion.shop.name)}", target: :_blank)
+
