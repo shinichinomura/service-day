@@ -20,6 +20,11 @@ gtag('config', '<%= ENV['GA_TRACKING_ID'] %>');
   </head>
 
   <body>
+    <div id="Header">
+      <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+      <%= image_set_tag 'logo.png', srcset: { 'logo@2x.png' => '2x' }, options: { size: '175x35' } %>
+      <%= yield :h1 %>
+    </div>
     <%= yield %>
   </body>
 </html>

@@ -25,10 +25,11 @@
       }
   link rel="canonical" href="#{promotion_path(@promotion)}"
 
-#promotions-show
+= content_for :h1 do
   h1
     = @promotion.title
 
+#promotions-show
   .image
     amp-img src="#{@promotion.image_url}" width="#{@promotion.image_size.width}" height="#{@promotion.image_size.height}" layout="responsive"
 

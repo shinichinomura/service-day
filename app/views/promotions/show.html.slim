@@ -1,10 +1,11 @@
 = content_for :head do
   link rel="amphtml" href="#{promotion_path(@promotion, amp: 1)}"
 
-#promotions-show
+= content_for :h1 do
   h1
     = @promotion.title
 
+#promotions-show
   .image
     = image_tag @promotion.image_url
 

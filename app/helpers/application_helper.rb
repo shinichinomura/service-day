@@ -9,4 +9,16 @@ module ApplicationHelper
         style: :compressed
     }).to_css
   end
+
+  def image_set_tag(source, srcset: {}, options: {}, amp: false)
+    srcset = srcset.map { |src, size| "#{path_to_image(src)} #{size}" }.join(', ')
+
+    tag = image_tag(source, options.merge(srcset: srcset))
+
+    if amp
+      tag.sub(/^<img/, '<amp-img').html_safe
+    else
+      tag
+    end
+  end
 end
