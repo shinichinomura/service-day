@@ -5,7 +5,7 @@ div.promotion-index
         = image_tag(promotion.image_url)
       .content
         h2.title
-          = promotion.title
+          = link_to(promotion.title, promotion_path(promotion))
         p.summary
           = promotion.summary
         - if promotion.url.present?

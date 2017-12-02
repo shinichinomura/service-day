@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
+
   root to: 'default#index'
+
+  resources :promotions, only: [:show]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
