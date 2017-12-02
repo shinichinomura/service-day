@@ -1,0 +1,2 @@
+class ImageSize < ApplicationRecord
+end

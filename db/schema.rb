@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171126152619) do
+ActiveRecord::Schema.define(version: 20171202102932) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 20171126152619) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["promotion_id", "day"], name: "index_day_of_month_promotion_rules_on_promotion_id_and_day", unique: true
+  end
+
+  create_table "image_sizes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "url", null: false
+    t.integer "width", null: false
+    t.integer "height", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["url"], name: "index_image_sizes_on_url", unique: true
   end
 
   create_table "promotions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
