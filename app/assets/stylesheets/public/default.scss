@@ -1,0 +1,35 @@
+// Place all the styles related to the default controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.promotion-index {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.promotion-item {
+  width: 100%;
+  box-shadow: 0 1px 6px rgba(0,0,0,.2);
+  margin-bottom: 1em;
+  background-color: #fff;
+
+  .image {
+    img {
+      width: 100%;
+    }
+  }
+
+  .content {
+    padding: 0 1em 1em 1em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    margin: .75em 0 .25em 0;
+  }
+
+  p.summary {
+    margin: 0 0 .25em 0;
+  }
+}

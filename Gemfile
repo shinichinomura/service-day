@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 gem 'mysql2'
+gem 'slim-rails'
 
 # ActiveAdmin
 gem 'activeadmin'

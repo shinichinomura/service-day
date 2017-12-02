@@ -1,0 +1,10 @@
+div.promotion-index
+  - @promotions.each do |promotion|
+    .promotion-item
+      .image
+        = image_tag(promotion.image_url)
+      .content
+        h2.title
+          = promotion.title
+        p.summary
+          = promotion.summary
