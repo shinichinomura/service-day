@@ -8,6 +8,3 @@ div.promotion-index
           = link_to(promotion.title, promotion_path(promotion))
         p.summary
           = promotion.summary
-        - if promotion.url.present?
-          .promotion_url
-            = link_to('公式ページ', promotion.url, target: :_blank)
