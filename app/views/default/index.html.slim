@@ -7,7 +7,7 @@
     - @promotions.each do |promotion|
       .daily-promotion-list-item
         .image
-          = link_to image_tag(promotion.image_url), promotion_path(promotion)
+          = link_to image_tag(promotion.image_url, size: "#{promotion.image_size_string}"), promotion_path(promotion)
         .content
           h2.title
             = link_to(promotion.title, promotion_path(promotion))

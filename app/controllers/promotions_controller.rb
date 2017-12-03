@@ -1,12 +1,14 @@
 class PromotionsController < ApplicationController
   def index
-    @promotions = Promotion.includes(:image_size, :day_of_month_promotion_rules).all
+    @promotions = PromotionDecorator.decorate_collection(
+      Promotion.includes(:image_size, :day_of_month_promotion_rules).all
+    )
 
     @page_title = "全てのサービスデー一覧"
   end
 
   def show
-    @promotion = Promotion.find(params[:id])
+    @promotion = PromotionDecorator.decorate(Promotion.find(params[:id]))
 
     @page_title = "#{@promotion.title}（#{@promotion.shop.name}）"
 

@@ -10,4 +10,19 @@ class PromotionDecorator < Draper::Decorator
   #     end
   #   end
 
+  def image_size_string
+    if image_size.present?
+      "#{object.image_size.width}x#{object.image_size.height}"
+    else
+      ''
+    end
+  end
+
+  def image_width
+    object.image_size.try(:width)
+  end
+
+  def image_height
+    object.image_size.try(:height)
+  end
 end

@@ -25,8 +25,8 @@
         "image": {
           "@type": "ImageObject",
           "url": "#{@promotion.image_url}",
-          "width": #{@promotion.image_size.width},
-          "height": #{@promotion.image_size.height}
+          "width": #{@promotion.image_width},
+          "height": #{@promotion.image_height}
         }
       }
   link rel="canonical" href="#{promotion_path(@promotion)}"
@@ -37,7 +37,7 @@
 
 #promotions-show
   .image
-    amp-img src="#{@promotion.image_url}" width="#{@promotion.image_size.width}" height="#{@promotion.image_size.height}" layout="responsive"
+    amp-img src="#{@promotion.image_url}" width="#{@promotion.image_width}" height="#{@promotion.image_height}" layout="responsive"
 
   h2
     | ショップ名

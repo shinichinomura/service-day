@@ -7,7 +7,7 @@
     .all-promotion-list-item
       .cover
         = link_to promotion_path(promotion) do
-          = image_tag(promotion.image_url, size: "#{promotion.image_size.width}x#{promotion.image_size.height}")
+          = image_tag(promotion.image_url, size: "#{promotion.image_size_string}")
       .content
         h2 = link_to promotion.title, promotion_path(promotion)
         .shop_name
