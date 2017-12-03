@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <% @promotions.each do |promotion| %>
+    <url>
+      <loc><%= promotion_url(promotion) %></loc>
+      <lastmod><%= promotion.updated_at.to_date %></lastmod>
+    </url>
+  <% end %>
+</urlset>
