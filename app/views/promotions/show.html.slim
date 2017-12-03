@@ -20,7 +20,7 @@
     | 詳細
 
   .description
-    = @promotion.description
+    = simple_format(@promotion.description)
 
   - if @promotion.url.present?
     h2
