@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "mixins";
+
 .promotion-index {
   width: 90%;
   margin: 1em auto auto auto;
@@ -31,4 +33,8 @@
   p.summary {
     margin: 0 0 .25em 0;
   }
+}
+
+.promotion-not-found {
+  @include content-box;
 }

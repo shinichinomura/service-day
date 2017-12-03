@@ -2,13 +2,18 @@
   h1
     | 本日のサービスデー一覧
 
-div.promotion-index
-  - @promotions.each do |promotion|
-    .promotion-item
-      .image
-        = link_to image_tag(promotion.image_url), promotion_path(promotion)
-      .content
-        h2.title
-          = link_to(promotion.title, promotion_path(promotion))
-        p.summary
-          = promotion.summary
+- if @promotions.present?
+  div.promotion-index
+    - @promotions.each do |promotion|
+      .promotion-item
+        .image
+          = link_to image_tag(promotion.image_url), promotion_path(promotion)
+        .content
+          h2.title
+            = link_to(promotion.title, promotion_path(promotion))
+          p.summary
+            = promotion.summary
+- else
+  div.promotion-not-found
+    p
+      | 本日のサービスデーは見つかりませんでした。
