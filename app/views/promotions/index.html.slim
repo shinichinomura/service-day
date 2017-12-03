@@ -6,7 +6,8 @@
   - @promotions.each do |promotion|
     .all-promotion-list-item
       .cover
-        = image_tag(promotion.image_url, size: "#{promotion.image_size.width}x#{promotion.image_size.height}")
+        = link_to promotion_path(promotion) do
+          = image_tag(promotion.image_url, size: "#{promotion.image_size.width}x#{promotion.image_size.height}")
       .content
         h2 = link_to promotion.title, promotion_path(promotion)
         .shop_name
