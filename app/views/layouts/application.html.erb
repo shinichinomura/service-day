@@ -15,6 +15,7 @@ gtag('config', '<%= ENV['GA_TRACKING_ID'] %>');
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link rel="shortcut icon" type="image/x-icon" href="https://s3-ap-northeast-1.amazonaws.com/service-day-public/favicon.ico">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= yield :head %>
   </head>
