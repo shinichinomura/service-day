@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "mixins";
+@import "variables";
 
 .daily-promotion-list {
   width: 90%;
@@ -28,6 +29,10 @@
   h2 {
     font-size: 1.2em;
     margin: .75em 0 .25em 0;
+
+    a {
+      color: $brand_color;
+    }
   }
 
   p.summary {
