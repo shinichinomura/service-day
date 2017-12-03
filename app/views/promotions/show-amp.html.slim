@@ -9,18 +9,18 @@
         "dateModified": "#{@promotion.updated_at.strftime('%Y-%m-%dT%H:%M:%S+09:00')}",
         "author": {
           "@type": "Person",
-          "name": "野村真一",
+          "name": "野村真一"
         },
         "publisher": {
           "@type": "Organization",
           "name": "サービスデイ",
-          "url": "http://service-day.com",
+          "url": "http://service-day.com"
         },
         "image": {
           "@type": "ImageObject",
           "url": "#{@promotion.image_url}",
           "width": #{@promotion.image_size.width},
-          "height": #{@promotion.image_size.height},
+          "height": #{@promotion.image_size.height}
         }
       }
   link rel="canonical" href="#{promotion_path(@promotion)}"
