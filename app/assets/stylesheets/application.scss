@@ -50,6 +50,42 @@ body {
     font-size: 1.4em;
   }
 }
+ 
+#Menu {
+  position: fixed;
+  top: 0;
+  width: 200px; /* メニューの幅 */
+  right: -220px; /* メニューの幅 + padding */
+  height: 100%;
+  transition: left .5s, right .5s;
+  background-color: #333;
+  z-index: 1024;
+  
+  ul {
+    margin: 0;
+    padding-left: 0;
+
+    li {
+      list-style: none;
+      border-bottom: 1px solid #666;
+      padding: 10px;
+      color: #fff;
+
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+ 
+#MenuButton {
+  display: none;
+}
+ 
+/* :checked 擬似クラスを使って、#openがチェック状態になった時に、#menuが「right: 0;」になります。 */
+#MenuButton:checked + #Menu {
+  right: 0;
+}
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
@@ -58,3 +94,4 @@ h1, h2, h3, h4, h5, h6 {
 a {
   text-decoration: none;
 }
+

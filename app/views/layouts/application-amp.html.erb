@@ -29,11 +29,12 @@
     </amp-analytics>
     <div id="Header">
       <div>
-        <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+        <label for="MenuButton"><i class="fa fa-bars fa-2x" aria-hidden="true"></i></label>
         <%= image_set_tag 'logo.png', srcset: { 'logo@2x.png' => '2x' }, options: { size: '175x35' }, amp: true %>
       </div>
       <%= yield :h1 %>
     </div>
+    <%= render partial: 'layouts/menu' %>
     <%= yield %>
   </body>
 </html>
