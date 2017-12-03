@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def title(page_title: "飲食店や映画館をおトクに利用しよう")
+  def title(page_title:)
     "サービスデイ - #{page_title}"
   end
 
