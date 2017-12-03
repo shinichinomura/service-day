@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "mixins";
+@import "variables";
 
 .all-promotion-list {
   width: 90%;
@@ -30,15 +31,24 @@
     h2 {
       font-size: 1.3em;
       margin: 0 0 .1em 0;
+
+      a {
+        color: $brand_color;
+      }
     }
 
-    .shop_name {
+    .shop_name,
+    .rule {
       font-size: .8em;
-      margin-bottom: .5em;
+      color: navy;
 
       i {
         margin-right: .25em;
       }
+    }
+
+    .rule {
+      margin-bottom: .5em;
     }
 
     p {

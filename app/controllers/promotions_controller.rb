@@ -1,6 +1,6 @@
 class PromotionsController < ApplicationController
   def index
-    @promotions = Promotion.all
+    @promotions = Promotion.includes(:image_size, :day_of_month_promotion_rules).all
 
     @page_title = "全てのサービスデー一覧"
   end
