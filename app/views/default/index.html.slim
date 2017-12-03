@@ -3,9 +3,9 @@
     | 本日のサービスデー一覧
 
 - if @promotions.present?
-  div.promotion-index
+  div.daily-promotion-list
     - @promotions.each do |promotion|
-      .promotion-item
+      .daily-promotion-list-item
         .image
           = link_to image_tag(promotion.image_url), promotion_path(promotion)
         .content
@@ -17,3 +17,6 @@
   div.promotion-not-found
     p
       | 本日のサービスデーは見つかりませんでした。
+    .to_all_list
+      i.fa.fa-usd aria-hidden="true"
+      = link_to '全てのサービスデー一覧', promotions_path

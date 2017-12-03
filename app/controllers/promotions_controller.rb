@@ -1,4 +1,10 @@
 class PromotionsController < ApplicationController
+  def index
+    @promotions = Promotion.all
+
+    @page_title = "全てのサービスデー一覧"
+  end
+
   def show
     @promotion = Promotion.find(params[:id])
 

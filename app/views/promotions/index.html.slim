@@ -1,0 +1,16 @@
+= content_for :h1 do
+  h1
+    | サービスデー一覧
+
+.all-promotion-list
+  - @promotions.each do |promotion|
+    .all-promotion-list-item
+      .cover
+        = image_tag(promotion.image_url, size: "#{promotion.image_size.width}x#{promotion.image_size.height}")
+      .content
+        h2 = link_to promotion.title, promotion_path(promotion)
+        .shop_name
+          i.fa.fa-home aria-hidden="true"
+          = promotion.shop.name
+        p
+          = promotion.summary
