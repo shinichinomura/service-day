@@ -1,0 +1,17 @@
+= content_for :h1 do
+  h1 = @page_title
+
+.all-promotion-list
+  - @promotion_rules.each do |rule|
+    = rule.heading(@promotion_rules)
+    .all-promotion-list-item
+      .cover
+        = link_to promotion_path(rule.promotion) do
+          = image_tag(rule.promotion.image_url, size: "#{rule.promotion.image_size_string}")
+      .content
+        h2 = link_to rule.promotion.title, promotion_path(rule.promotion)
+        .shop_name
+          i.fa.fa-home aria-hidden="true"
+          = rule.promotion.shop.name
+        p
+          = rule.promotion.summary
